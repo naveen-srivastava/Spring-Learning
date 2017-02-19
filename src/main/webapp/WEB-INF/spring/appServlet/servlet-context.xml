@@ -51,6 +51,14 @@
 		<beans:property name="defaultEncoding" value="UTF-8" />
 	</beans:bean>
 	
+	<!-- Configuring interceptors based on URI -->
+	<interceptors>
+		<interceptor>
+			<mapping path="/cust/save.do" />
+			<beans:bean class="com.naveen.springmvc.RequestProcessingTimeInterceptor"></beans:bean>
+		</interceptor>
+	</interceptors>
+	
 	
 	
 	<context:component-scan base-package="com.naveen.springmvc" />

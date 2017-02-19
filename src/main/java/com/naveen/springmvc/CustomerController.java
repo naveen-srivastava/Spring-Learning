@@ -40,7 +40,13 @@ public class CustomerController {
 		logger.info("Returning custSaveSuccess.jsp page");
 		model.addAttribute("customer", customer);
 		customers.put(customer.getEmail(), customer);
-		return "custSaveSuccess";
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+				return "custSaveSuccess";
 	}
 
 }
